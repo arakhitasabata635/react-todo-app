@@ -1,48 +1,39 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { BiSolidCommentAdd } from "react-icons/bi";
 
 function AddTodo({ onAddClick }) {
-  const [todoName, settodoName] = useState("");
-  const [dueDate, setdueDate] = useState("");
+  const todoNameElement = useRef("");
+  const dueDatElement = useRef("");
 
-  const storeName = (e) => {
-    settodoName(e.target.value);
-  };
-  const storeDueDate = (e) => {
-    setdueDate(e.target.value);
-  };
-
-  const handelOnClick = () => {
+  const handelOnClick = (e) => {
+    e.preventDefault();
+    let todoName = todoNameElement.current.value;
+    let dueDate = dueDatElement.current.value;
     if (todoName && dueDate) {
       onAddClick(todoName, dueDate);
-      settodoName("");
-      setdueDate("");
+      todoNameElement.current.value = "";
+      dueDatElement.current.value = "";
     } else return;
   };
 
   return (
-    <div className="row">
+    <form onSubmit={handelOnClick} className="row">
       <div className="col-4">
         <input
-          value={todoName}
-          onChange={storeName}
+          ref={todoNameElement}
           type="text"
           placeholder="Enter TODO here"
         />
       </div>
       <div className="col-4">
-        <input value={dueDate} onChange={storeDueDate} type="date" />
+        <input ref={dueDatElement} type="date" />
       </div>
       <div className="col-2">
-        <button
-          type="button"
-          className="btn btn-success"
-          onClick={handelOnClick}
-        >
+        <button type="submit" className="btn btn-success">
           <BiSolidCommentAdd />
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 export default AddTodo;

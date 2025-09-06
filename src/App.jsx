@@ -5,7 +5,7 @@ import WelcomeMessage from "./components/welcomeMessage";
 import "./style.css";
 
 function App() {
-  const [todoItemList, setTodoItemList] = useState([{todoName: "abh" , dueDate : "12"}]);
+  const [todoItemList, setTodoItemList] = useState([]);
 
   const hendelAddOnClick = (todoName, dueDate) => {
     let newItemList = [...todoItemList, { todoName, dueDate }];
