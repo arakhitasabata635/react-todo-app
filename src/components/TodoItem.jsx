@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import style from "./TodoItem.module.css"
 import { RiChatDeleteFill } from "react-icons/ri";
+import { TodoItemsContext } from "../store/Todo-items-store";
 
 
-function TodoItem({ dueDate, todoName, handelDeletOnClick }) {
+function TodoItem({ dueDate, todoName }) {
+  const {deleteItem} = useContext(TodoItemsContext)
   return (
     <>
       <div className="row">
@@ -12,7 +15,7 @@ function TodoItem({ dueDate, todoName, handelDeletOnClick }) {
           <button 
           type="button" 
           className="btn btn-danger"
-          onClick={() => handelDeletOnClick(todoName)}
+          onClick={() => deleteItem(todoName)}
           >
             <RiChatDeleteFill />
           </button>

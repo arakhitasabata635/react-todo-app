@@ -1,23 +1,27 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { TodoItemsContext } from "../store/Todo-items-store";
 import { BiSolidCommentAdd } from "react-icons/bi";
 
-function AddTodo({ onAddClick }) {
+function AddTodo() {
+
+  const {addNewItem} = useContext(TodoItemsContext)
+
   const todoNameElement = useRef("");
   const dueDatElement = useRef("");
 
-  const handelOnClick = (e) => {
+  const handelFormSubmit = (e) => {
     e.preventDefault();
     let todoName = todoNameElement.current.value;
     let dueDate = dueDatElement.current.value;
     if (todoName && dueDate) {
-      onAddClick(todoName, dueDate);
+      addNewItem(todoName, dueDate);
       todoNameElement.current.value = "";
       dueDatElement.current.value = "";
     } else return;
   };
 
   return (
-    <form onSubmit={handelOnClick} className="row">
+    <form onSubmit={handelFormSubmit} className="row">
       <div className="col-4">
         <input
           ref={todoNameElement}

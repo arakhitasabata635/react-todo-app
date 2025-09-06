@@ -3,29 +3,31 @@ import AddTodo from "./components/AddTodo";
 import TodoContainer from "./components/TodoContainer";
 import WelcomeMessage from "./components/welcomeMessage";
 import "./style.css";
+import { TodoItemsContext } from "./store/Todo-items-store";
 
 function App() {
-  const [todoItemList, setTodoItemList] = useState([]);
+  const [todoItems, setTodoItemList] = useState([]);
 
-  const hendelAddOnClick = (todoName, dueDate) => {
+  const addNewItem = (todoName, dueDate) => {
     setTodoItemList((currentVal) => [{ todoName, dueDate }, ...currentVal]);
   };
 
-  const handelDeletOnClick = (itemToBeDelete) => {
-    let newItemList = todoItemList.filter((item) => item.todoName !== itemToBeDelete) ;
+  const deleteItem = (itemToBeDelete) => {
+    let newItemList = todoItems.filter(
+      (item) => item.todoName !== itemToBeDelete
+    );
     setTodoItemList(newItemList);
   };
 
   return (
-    <center className="todo-container" style={{ padding: "15px" }}>
-      <h1 className="custom-heading">TODO App</h1>
-      <AddTodo onAddClick={hendelAddOnClick} />
-      {todoItemList.length === 0 && <WelcomeMessage />}
-      <TodoContainer
-        todoItemList={todoItemList}
-        handelDeletOnClick={handelDeletOnClick}
-      ></TodoContainer>
-    </center>
+    <TodoItemsContext.Provider value={{ todoItems, addNewItem, deleteItem }}>
+      <center className="todo-container" style={{ padding: "15px" }}>
+        <h1 className="custom-heading">TODO App</h1>
+        <AddTodo  />
+        {todoItems.length === 0 && <WelcomeMessage />}
+        <TodoContainer></TodoContainer>
+      </center>
+    </TodoItemsContext.Provider>
   );
 }
 
