@@ -1,5 +1,9 @@
 function WelcomeMessage() {
-  return <p>Enjoy Your Day</p>;
+  return <p style={{
+    fontSize: "25px",
+    marginTop: "40px",
+    fontWeight: "600",
+  }}>Enjoy Your Day</p>;
 }
 
 export default WelcomeMessage;

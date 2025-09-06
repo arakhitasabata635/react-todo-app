@@ -13,7 +13,6 @@ function App() {
   };
 
   const handelDeletOnClick = (itemToBeDelete) => {
-    console.log(itemToBeDelete);
     let newItemList = todoItemList.filter((item) => item.todoName !== itemToBeDelete) ;
     setTodoItemList(newItemList);
   };

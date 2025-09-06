@@ -1,4 +1,6 @@
 import style from "./TodoItem.module.css"
+import { RiChatDeleteFill } from "react-icons/ri";
+
 
 function TodoItem({ dueDate, todoName, handelDeletOnClick }) {
   return (
@@ -12,7 +14,7 @@ function TodoItem({ dueDate, todoName, handelDeletOnClick }) {
           className="btn btn-danger"
           onClick={() => handelDeletOnClick(todoName)}
           >
-            Delete
+            <RiChatDeleteFill />
           </button>
         </div>
       </div>

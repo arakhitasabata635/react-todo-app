@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BiSolidCommentAdd } from "react-icons/bi";
 
 function AddTodo({ onAddClick }) {
   const [todoName, settodoName] = useState("");
@@ -38,7 +39,7 @@ function AddTodo({ onAddClick }) {
           className="btn btn-success"
           onClick={handelOnClick}
         >
-          Add
+          <BiSolidCommentAdd />
         </button>
       </div>
     </div>
