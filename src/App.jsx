@@ -8,8 +8,7 @@ function App() {
   const [todoItemList, setTodoItemList] = useState([]);
 
   const hendelAddOnClick = (todoName, dueDate) => {
-    let newItemList = [...todoItemList, { todoName, dueDate }];
-    setTodoItemList(newItemList);
+    setTodoItemList((currentVal) => [{ todoName, dueDate }, ...currentVal]);
   };
 
   const handelDeletOnClick = (itemToBeDelete) => {
