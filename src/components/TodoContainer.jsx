@@ -4,7 +4,6 @@ import { TodoItemsContext } from "../store/Todo-items-store";
 
 function TodoContainer() {
   const {todoItems} = useContext(TodoItemsContext);
-  
 
   return (
     <div className="todo-container">
