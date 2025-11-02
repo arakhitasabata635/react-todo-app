@@ -17,10 +17,10 @@ A simple and interactive Todo application built with React, designed to help use
 - **JavaScript (ES6+)**
 
 ## 🔧 How to Run Locally
-git clone https://github.com/arakhitasabata635/react-todo-app
-cd react-todo-app
-npm install
-npm run dev
+- git clone https://github.com/arakhitasabata635/react-todo-app
+- cd react-todo-app
+- npm install
+- npm run dev
 
 App will run at:  
 http://localhost:5173/ (default Vite port)
