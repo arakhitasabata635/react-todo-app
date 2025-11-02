@@ -1,12 +1,37 @@
-# React + Vite
+# React Todo App ✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive Todo application built with React, designed to help users stay organized by adding, and removing tasks easily.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- ➕ Add new todos
+- ✏️ Edit existing tasks
+- ❌ Delete tasks
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **React.js**
+- **CSS**
+- **JavaScript (ES6+)**
+
+## 🔧 How to Run Locally
+git clone https://github.com/arakhitasabata635/react-todo-app
+cd react-todo-app
+npm install
+npm run dev
+
+App will run at:  
+http://localhost:5173/ (default Vite port)
+
+## 🧠 What I Learned
+- React Hooks (useState)
+- State management & UI updates
+- Component-based architecture
+- Handling user input efficiently
+
+## 🙌 Author
+**Arakhita Sabata**  
+⭐ Star this repo if you found it helpful!
+

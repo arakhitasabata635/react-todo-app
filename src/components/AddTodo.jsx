@@ -15,8 +15,8 @@ function AddTodo() {
     let dueDate = dueDatElement.current.value;
     if (todoName && dueDate) {
       addNewItem(todoName, dueDate);
-      todoNameElement.current.value = "";
-      dueDatElement.current.value = "";
+      todoNameElement.current.valueOf = "";
+      dueDatElement.current.valueOf = "";
     } else return;
   };
 
